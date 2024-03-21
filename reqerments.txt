@@ -1,0 +1,10 @@
+openai
+textract
+transformers
+langchain_community
+langchain
+pypdf
+faiss-cpu
+PyPDF2
+tiktoken
+tensorflow
