@@ -92,12 +92,24 @@ def submit_query():
 
 
 # Function to display conversation history
+# def display_conversation():
+#     text_widget.config(state=tk.NORMAL)
+#     text_widget.delete(1.0, tk.END)
+#     for line in conversation_history:
+#         text_widget.insert(tk.END, line)
+#     text_widget.config(state=tk.DISABLED)
+
 def display_conversation():
     text_widget.config(state=tk.NORMAL)
     text_widget.delete(1.0, tk.END)
     for line in conversation_history:
-        text_widget.insert(tk.END, line)
+        if line.startswith("User:"):
+            text_widget.insert(tk.END, line, 'user')
+        else:
+            text_widget.insert(tk.END, line)
     text_widget.config(state=tk.DISABLED)
+    text_widget.tag_config('user', font=('Arial', 10, 'bold'))
+
 
 
 # Function to open a new window for PDF upload
